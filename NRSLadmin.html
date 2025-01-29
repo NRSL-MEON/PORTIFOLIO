@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-firestore.js"></script>
+    <link rel="stylesheet" href="NRSLadmin.css">
+</head>
+<body>
+    <div id="Admin-pane">
+        <h1>Admin Panel</h1>
+        <!-- Form to Add Projects -->
+        <div class="projects-pane">
+            <h2>Add Project</h2>
+            <form id="add-project-form">
+                <input type="text" id="project-title" placeholder="Project Title" required>
+                <textarea id="project-description" placeholder="Project Description" required></textarea>
+                <input type="url" id="project-link" placeholder="Project Link" required>
+                <button type="submit">Add Project</button>
+            </form>
+        </div>
+      
+    
+        <!-- Form to Add Testimonials -->
+         <div class="testmonial-pane">
+            <h2>Add Testimonial</h2>
+            <form id="add-testimonial-form">
+                <input type="text" id="testimonial-name" placeholder="Name" required>
+                <input type="text" id="testimonial-role" placeholder="Role" required>
+                <textarea id="testimonial-feedback" placeholder="Feedback" required></textarea>
+                <button type="submit">Add Testimonial</button>
+            </form>
+        </div>
+         </div>
+     
+
+
+    <script src="NRSLadmin.js"></script>
+</body>
+</html>

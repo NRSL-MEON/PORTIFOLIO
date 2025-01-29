@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="NRSL.css">
+    <title>NRSL</title>
+</head>
+<body>
+    <div id="pot">
+        <div id="header">
+            <div class="nav-bar">
+                <div class="nav">
+                    <div class="logo-area">
+                        <h1 class="logo">NRSL</h1>
+                    </div>
+                    <button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation">☰</button>
+                    <ul class="nav-menu">
+                        <li class="nav-list"><a href="#home ">Home</a></li>
+                        <li class="nav-list"><a href="#Education">Education</a></li>
+                        <li class="nav-list"><a href="#services ">Services</a></li>
+                        <li class="nav-list"><a href="#testmonial ">Testimonials</a></li>
+                        <li class="nav-list"><a href="#contact ">Contact</a></li>
+                    </ul>
+                </div>
+    
+            </div>
+        </div>
+        <div id="container">
+            <section id="home">
+                <div class="content-home">
+                    <div class="home-txt">
+                        <div>
+                        <h1>HI,AM NTALE RONNIE</h1>
+                        <h2 class="typer">And am<span class="multiple-text"> </span></h2>
+                        <p>Welcome to my personal portfolio where I showcase my 
+                            journey, skills, and services. Let’s create something 
+                            amazing together!</p>
+                         <div class="hm-btns">
+                             <a href="" class="hm-hire">Hire</a>
+                             <a href="" class="hm-contact">contact</a>
+                             <a href="projects.html" class="projects">Projects</a>
+                            </div>
+                         <div class="media-icins">
+                             media
+                         </div>
+                         </div>
+
+                    </div>
+                   
+                    <div class="home-img">
+                       <img src="images/meon1.jpg" alt="">
+                    </div>
+                </div>
+            </section> 
+            <section id="Education">
+                <h1 class="educ-head">Education</h1>
+                <div class="timeline-items">
+                    
+                <div class="timeline-item">
+                    <div class="timeline-dot">  </div>
+                        <div class="timeline-date">2023-todate</div>
+                        <div class="timeline-content">
+                            <h3>Diploma in Computer Science</h3>
+                            <p>Uganda Institute of Information and Communications Technology.</p>
+                       </div>
+                     </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                            <div class="timeline-date">2019-2022</div>
+                            <div class="timeline-content">
+                                <h3>Internship at Kinyara Sugar Limited</h3>
+                                <p>Gained practical experience in IT systems management.</p>
+                            </div>
+                         </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot">  </div>
+                        <div class="timeline-date">2019-2021</div>
+                        <div class="timeline-content">
+                           <h3>National Cirtificate in Information and Communications Technology</h3>
+                        <p>Gained practical experience in IT systems management.</p>
+                 </div>
+            </div>
+              
+                </div>
+            </section>
+            <section id="services">
+                <div class="service-container">
+                    <div class="service-head"><h2>SERVICES</h2> </div>
+                    <div class="service-content">
+                        <div class="service-conts">
+                        <div class="service">
+                            <h2>UI/IX DESIGN</h2>
+                             <p>Creating user-friendly and visually appealing designs tailored to client needs.</p>
+                                 </div>
+                            </div>
+
+                        <div class="service-conts">
+                            <div class="service">
+                                <h2>FRONTEND DEVELOPMENT</h2>
+                               <p>Building responsive and interactive websites with modern technologies.</p>
+                                     </div>
+                                </div>
+                        <div class="service-conts">
+                            <div class="service">
+                                <h2>BACKEND DEVELOPMENT</h2>
+                                <p>Ensuring robust server-side functionality and database management.</p>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+            </section>
+
+            <section id="testmonial">
+                <div class="testmonial-container">
+                    <h1>TESTMONIES</h1>
+                    <div class="testimonials">
+                        <div class="testimonial">
+                             
+                        </div>
+                        <!-- Additional testimonials here -->
+                    </div>
+                </div>
+            </section>
+    <section id="contact" class="contacts">
+        <h2 class="section-title">Get in Touch</h2>
+        <form id="contact-form">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send</button>
+        </form>
+    </section>
+
+    <div class="footer">
+        <P> Designed and Developed by NRSL &copy All rights Reserved....</P>
+
+     </div>
+     </div>
+     <script>
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
+import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js";
+
+// Your Firebase configuration
+const firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_AUTH_DOMAIN",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_STORAGE_BUCKET",
+    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+    appId: "YOUR_APP_ID"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+
+const testimonialsContainer = document.querySelector(".testimonials");
+
+async function fetchTestimonials() {
+    const querySnapshot = await getDocs(collection(db, "testimonials"));
+    testimonialsContainer.innerHTML = ""; // Clear previous content
+    querySnapshot.forEach((doc) => {
+        const testimonial = doc.data();
+        const testimonialDiv = document.createElement("div");
+        testimonialDiv.classList.add("testimonial");
+        testimonialDiv.innerHTML = `
+            <p>"${testimonial.feedback}"</p>
+            <h4>- ${testimonial.name}</h4>
+            <h5>${testimonial.role}</h5>
+        `;
+        testimonialsContainer.appendChild(testimonialDiv);
+    });
+}
+
+// Call fetchTestimonials on page load
+fetchTestimonials();
+
+     </script>
+
+<script src="NRSL.js"></script>    
+    
+</body>
+</html>
