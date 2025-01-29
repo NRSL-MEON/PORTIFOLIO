@@ -665,13 +665,7 @@ button:hover {
         padding-left: calc(14% - 25px);
         
     }
-    .timeline-items::before{
-        content: " ";
-        position: absolute;
-        height: 100%;
-        background-color: var(--primary-color);
-        left: calc(11% + 1px);
-    }
+
     .timeline-item{
          align-items:center ;
         position: relative;
@@ -696,18 +690,7 @@ button:hover {
 
      
  
-    .timeline-dot{
-        height: 21px;
-        width: 21px;
-         background-color: var(--primary-color);
-         box-shadow: 0 0 25px var(--text-color), 0 0 25px var(--text-color);
-         position: absolute;
-         left: calc(20% - 81px);
-         right:calc(40% - 40rem) ;
-         border-radius: 50%;
-         top: 10px;
-    
-    }
+
    
  
 
