@@ -650,6 +650,9 @@ button:hover {
             margin-top: 5rem;
             width: 100%;
         }
+        .timeline-items::before{
+            display:none;
+        }
 
  
     .timeline-item:nth-child(odd){
