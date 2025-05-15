@@ -657,7 +657,6 @@ button:hover {
  
     .timeline-item:nth-child(odd){
         padding-right: calc(14% - 20px);
-        text-align: left;
         margin-left: .5rem;
          
        
@@ -677,12 +676,7 @@ button:hover {
         translate: -50rem;
     }
     .timeline-content{
-        border: 1px solid var(--primary-color);
-        border-radius: 20px;
-        box-shadow: 0 0 25px var(--text-color);
-        width: 90%;
-        font-size: .9em;
-        
+     display:none;
     }
     .timeline-content h3{
         font-size: 1em;
